@@ -10,8 +10,13 @@ namespace BinarySearchTree_Project
     {
         static void Main(string[] args)
         {
+            BST binarySearchTree = new BST();
 
+            binarySearchTree.AddNode(1);
+            binarySearchTree.AddNode(6);
 
+            binarySearchTree.Display();
+            Console.ReadLine();
         }
     }
 }

@@ -6,42 +6,86 @@ using System.Threading.Tasks;
 
 namespace BinarySearchTree_Project
 {
-    class BST
+    public class BST
     {
-        private class Node<T>
+        private Node rootNode;
+        private int count;
+        public int Count()
         {
-            public Node Next;
-            public T Data;
-        }
-        private Node head = null;
-        public void AddNode(T t)
-        {
-            Node newNode = new Node();
-            newNode.Next = head;
-            newNode.Data = t;
-            head = newNode;
+            return count;
         }
 
-
-
-        public Node<T> head { get; set; }
-        public LinkedList()
+        public BST()
         {
-            this.head = null;
+            rootNode = null;
+            count = 0;
+
         }
-        public void AddAtHead(T item)
+        public bool IsEmpty()
         {
-            Node<T> newNode = new Node<T>();
-            newNode.item = item;
-            if (this.head == null)
+            return rootNode == null;
+        }
+
+        public void AddNode(int d)
+        {
+            if (IsEmpty())
             {
-                this.head = newNode;
+                rootNode = new Node(d);
             }
             else
             {
-                newNode.next = head;
-                this.head = newNode;
+                rootNode.InsertData(ref rootNode, d);
             }
+            count++;
+        }
+
+        public bool SearchNode(Node node, int s)
+        {
+            //O(log n) logarithmic time
+            if (node == null)
+            {
+                Console.WriteLine("the list is empty");
+                return false;
+            }
+
+            //O(log n) logarithmic time
+
+            if (node.data == s)
+            {
+                return true;
+            }
+            else if (node.data < s)
+            {
+                return SearchNode(node.right, s);
+            }
+            else if (node.data > s)
+            {
+                return SearchNode(node.left, s);
+            }
+            return false;
+        }
+        public void Display()
+        {
+            if (!IsEmpty())
+                rootNode.Display(rootNode);
+        }
+        public void DisplayList()
+        {
+            Node node;
+            if (rootNode == null)
+            {
+                Console.WriteLine("List is empty");
+                return;
+            }
+            Console.Write("List is : ");
+            node = rootNode;
+            while (node != null)
+            {
+                Console.Write(node.data + " ");
+                node = node.link;
+            }
+            Console.WriteLine();
+
         }
     }
 }

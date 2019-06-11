@@ -1,0 +1,7 @@
+C:\Users\brune\Desktop\DCC\Week_06\BinarySearchTree_Project\bin\Debug\BinarySearchTree_Project.exe.config
+C:\Users\brune\Desktop\DCC\Week_06\BinarySearchTree_Project\bin\Debug\BinarySearchTree_Project.exe
+C:\Users\brune\Desktop\DCC\Week_06\BinarySearchTree_Project\bin\Debug\BinarySearchTree_Project.pdb
+C:\Users\brune\Desktop\DCC\Week_06\BinarySearchTree_Project\obj\Debug\BinarySearchTree_Project.csprojAssemblyReference.cache
+C:\Users\brune\Desktop\DCC\Week_06\BinarySearchTree_Project\obj\Debug\BinarySearchTree_Project.csproj.CoreCompileInputs.cache
+C:\Users\brune\Desktop\DCC\Week_06\BinarySearchTree_Project\obj\Debug\BinarySearchTree_Project.exe
+C:\Users\brune\Desktop\DCC\Week_06\BinarySearchTree_Project\obj\Debug\BinarySearchTree_Project.pdb
