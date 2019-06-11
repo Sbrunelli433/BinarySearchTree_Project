@@ -6,12 +6,15 @@ using System.Threading.Tasks;
 
 namespace BinarySearchTree_Project
 {
-    class Program
+    public class Node<T>
     {
-        static void Main(string[] args)
+        public T item;
+        public Node<T> next;
+        public Node()
         {
-
-
+            this.next = null;
         }
+
+
     }
 }
