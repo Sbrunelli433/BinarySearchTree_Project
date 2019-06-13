@@ -149,9 +149,9 @@ namespace BinarySearchTree_Project
             int data;
             while (true)
             {
-                Console.WriteLine(" 1. Add Node");
-                Console.WriteLine(" 2. Search for an element");
-                Console.WriteLine(" 3. Display List");
+                Console.WriteLine(" 1. Add Node ");
+                Console.WriteLine(" 2. Search for an element ");
+                Console.WriteLine(" 3. Display List ");
 
                 choice = int.Parse(Console.ReadLine());
                 if (choice == 4)
