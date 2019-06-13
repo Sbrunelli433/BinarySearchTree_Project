@@ -26,7 +26,7 @@ namespace BinarySearchTree_Project
             rootNode = null;
             count = 0;
         }
-        public bool IsEmpty()
+        private bool IsEmpty()
         {
             return rootNode == null;
         }
@@ -43,7 +43,7 @@ namespace BinarySearchTree_Project
             }
             count++;
         }
-        public void InsertData(ref Node node, int data)
+        private void InsertData(ref Node node, int data)
         {
             //O(log n) logarithmic time
             //sorts the data to the left or right side of the binary tree
@@ -61,6 +61,39 @@ namespace BinarySearchTree_Project
             }
         }
 
+        public bool Search(int x)
+        {
+            int position = 1;
+            Node node = rootNode;
+            while (node != null)
+            {
+                if (node.data == x)
+                {
+                    break;
+                }
+                else if (node.data <= x)
+                {
+                    position++;
+                    node = node.right;
+                }
+                else if (node.data >= x)
+                {
+                    position++;
+                    node = node.left;
+                }
+
+            }
+            if (node == null)
+            {
+                Console.WriteLine($"{x} not found in list");
+                return false;
+            }
+            else
+            {
+                Console.WriteLine($"{x} is at position {position}");
+                return true;
+            }
+        }
         public bool SearchNode(Node node, int stuff)
         {
             //O(log n) logarithmic time
@@ -91,7 +124,7 @@ namespace BinarySearchTree_Project
         {
             if (!IsEmpty())
             {
-                Display(rootNode);
+                DisplayNodes(rootNode);
             }
             else
             {
@@ -99,15 +132,49 @@ namespace BinarySearchTree_Project
             }
         }
 
-        public void Display(Node node)
+        private void DisplayNodes(Node node)
         {
             if (node == null)
             {
                 return;
             }
-            Display(node.left);
+            DisplayNodes(node.left);
             Console.Write(" " + node.data);
-            Display(node.right);
+            DisplayNodes(node.right);
+        }
+
+        public void Menu()
+        {
+            int choice;
+            int data;
+            while (true)
+            {
+                Console.WriteLine(" 1. Add Node");
+                Console.WriteLine(" 2. Search for an element");
+                Console.WriteLine(" 3. Display List");
+
+                choice = int.Parse(Console.ReadLine());
+                if (choice == 4)
+                {
+                    break;
+                }
+                switch(choice)
+                {
+                    case 1:
+                        Console.WriteLine(" enter the element to be added: ");
+                        data = int.Parse(Console.ReadLine());
+                        AddNode(data);
+                        break;
+                    case 2:
+                        Console.WriteLine(" enter the element to be searched: ");
+                        data = int.Parse(Console.ReadLine());
+                        Search(data);
+                        break;
+                    case 3:
+                        Display();
+                        break;
+                }
+            }
         }
     }
 }

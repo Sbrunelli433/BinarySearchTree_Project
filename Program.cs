@@ -12,18 +12,22 @@ namespace BinarySearchTree_Project
         {
             BST binarySearchTree = new BST();
 
+
+            binarySearchTree.AddNode(2);
             binarySearchTree.AddNode(1);
             binarySearchTree.AddNode(6);
             binarySearchTree.AddNode(7);
             binarySearchTree.AddNode(8);
-            binarySearchTree.AddNode(10);
-            binarySearchTree.AddNode(9);
-            binarySearchTree.AddNode(7);
-            binarySearchTree.AddNode(7);
-            binarySearchTree.AddNode(9);
-            binarySearchTree.AddNode(15);
+            //binarySearchTree.AddNode(10);
+            //binarySearchTree.AddNode(9);
+            //binarySearchTree.AddNode(7);
+            //binarySearchTree.AddNode(7);
+            //binarySearchTree.AddNode(9);
+            //binarySearchTree.AddNode(15);
 
-            binarySearchTree.Display();
+
+            binarySearchTree.Menu();
+
             Console.ReadLine();
 
 
