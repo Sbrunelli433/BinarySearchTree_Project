@@ -10,10 +10,16 @@ namespace BinarySearchTree_Project
     {
         private Node rootNode;
         private int count;
+        //private int capacity;
+
         public int Count()
         {
             return count;
         }
+        //public int Capacity
+        //{
+        //    get { return capacity; }
+        //}
 
         public BST()
         {
@@ -33,22 +39,75 @@ namespace BinarySearchTree_Project
             }
             else
             {
-                rootNode.InsertData(ref rootNode, derp);
+                InsertData(ref rootNode, derp);
             }
             count++;
         }
-
-        public void Search(int toSearch)
+        public void InsertData(ref Node node, int data)
         {
-            rootNode.SearchNode(rootNode, toSearch);
+            //O(log n) logarithmic time
+            //sorts the data to the left or right side of the binary tree
+            if (node == null)
+            {
+                node = new Node(data);
+            }
+            else if (node.data < data)
+            {
+                InsertData(ref node.right, data);
+            }
+            else if (node.data >= data)
+            {
+                InsertData(ref node.left, data);
+            }
+        }
+
+        public bool SearchNode(Node node, int stuff)
+        {
+            //O(log n) logarithmic time
+            if (node == null)
+            {
+                Console.WriteLine("the list is empty");
+                return false;
+            }
+
+            //O(log n) logarithmic time
+
+            if (node.data == stuff)
+            {
+                return true;
+            }
+            else if (node.data < stuff)
+            {
+                return SearchNode(node.right, stuff);
+            }
+            else if (node.data > stuff)
+            {
+                return SearchNode(node.left, stuff);
+            }
+            return false;
         }
 
         public void Display()
         {
             if (!IsEmpty())
             {
-                rootNode.Display(rootNode);
+                Display(rootNode);
             }
+            else
+            {
+                Console.WriteLine("The tree is empty");
+            }
+        }
+
+        public void Display(Node node)
+        {
+            if (node == null)
+            {
+                return;
+            }
+            Display(node.left);
+            Console.Write(" " + node.data);
+            Display(node.right);
         }
     }
 }
