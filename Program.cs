@@ -15,8 +15,10 @@ namespace BinarySearchTree_Project
             binarySearchTree.AddNode(1);
             binarySearchTree.AddNode(6);
 
+
             binarySearchTree.Display();
             Console.ReadLine();
+
         }
     }
 }

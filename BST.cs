@@ -19,73 +19,36 @@ namespace BinarySearchTree_Project
         {
             rootNode = null;
             count = 0;
-
         }
         public bool IsEmpty()
         {
             return rootNode == null;
         }
 
-        public void AddNode(int d)
+        public void AddNode(int derp)
         {
             if (IsEmpty())
             {
-                rootNode = new Node(d);
+                rootNode = new Node(derp);
             }
             else
             {
-                rootNode.InsertData(ref rootNode, d);
+                rootNode.InsertData(ref rootNode, derp);
             }
             count++;
         }
 
-        public bool SearchNode(Node node, int s)
+        public void Search(int toSearch)
         {
-            //O(log n) logarithmic time
-            if (node == null)
-            {
-                Console.WriteLine("the list is empty");
-                return false;
-            }
-
-            //O(log n) logarithmic time
-
-            if (node.data == s)
-            {
-                return true;
-            }
-            else if (node.data < s)
-            {
-                return SearchNode(node.right, s);
-            }
-            else if (node.data > s)
-            {
-                return SearchNode(node.left, s);
-            }
-            return false;
+            rootNode.SearchNode(rootNode, toSearch);
         }
+
         public void Display()
         {
             if (!IsEmpty())
+            {
                 rootNode.Display(rootNode);
-        }
-        public void DisplayList()
-        {
-            Node node;
-            if (rootNode == null)
-            {
-                Console.WriteLine("List is empty");
-                return;
             }
-            Console.Write("List is : ");
-            node = rootNode;
-            while (node != null)
-            {
-                Console.Write(node.data + " ");
-                node = node.link;
-            }
-            Console.WriteLine();
-
         }
     }
 }
